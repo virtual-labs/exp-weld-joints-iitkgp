@@ -71,13 +71,13 @@ Similar to the corner joints, two workpieces are placed at a right angle, but in
 ### Edge joint:
 
 Edge joints are formed by welding the edges of two workpieces together having flanging edges. It may be formed by bending one or both plates at an angle. The edges of the workpieces are parallel or nearly parallel. An example of an edge joint can be seen in figure 6. It is not the strongest of the joints as the weld does not fully penetrate the joint thickness. It is generally used to join sheet metal of less than 0.25-inch thickness that is not subjected to heavy load.
- 
+
 <center>
 <img src="./images/Tfig7.jpg">
 
 ***Figure 7: Schematic representation of Edge weld joint.***
-</center> 
- 
+</center>
+
 ## Types of weld:
 
 Mainly three different types of welding are used i.e. fillet weld, groove weld and surface weld.
@@ -91,7 +91,7 @@ Fillet weld joins two surfaces at the right angle to each other. It is triangula
 
 ***Figure 8: Schematic representation of various fillet weld joints***
 </center> 
- 
+
 ### Groove weld:
 
 Groove weld as the name suggests refers to the weld deposited in grooves between two workpieces. The edge is prepared for one or more workpieces to allow access throughout the cross-section, during the welding of thick plates. The grooves can be made with different types of designs i.e., V groove, J groove, bevel,and U groove. Groove design changes depend upon whether full or partial penetration is required as illustrated in figure 9.
@@ -103,7 +103,7 @@ After the fillet weld, they are the 2nd most popular weld choice. It is used in 
 
 ***Figure 9: Schematic representation of various Groove weld joints***
 </center> 
- 
+
 ### Surface weld:
 
 The deposition of metal on the surface of the workpiece with the help of welding processes is called surface welding. This is also termed as bead on plate and is illustrated in figure 10. It is an economical way of extending and conserving the life of tools and machines. Different chemical or mechanical properties can be achieved for the surface with a surface weld.  
@@ -113,9 +113,9 @@ The deposition of metal on the surface of the workpiece with the help of welding
 
 ***Figure 10: Schematic representation of Surface Weld***
 </center> 
- 
+
 ## Welding Positions:
- 
+
 Depending on the application of the parts, welding needs to be performed in various positions. Not all welding processes are capable of welding in all positions and weld parameters also need to be modified to weld in different positions. For example, welding in an overhead position may be needed in structural applications. Welders are expected to practice welding in any position. Some welding jobs can be done in any position while some are limited to just one or two.
 
 American Welding Society has broadly categorized welding positions into major four as can be seen schematically in figure 11:
@@ -133,8 +133,8 @@ The difficulty level for the welding increases from Flat to horizontal to vertic
 <img src="./images/Tfig11.jpg">
 
 ***Figure 11: Schematic of the welding positions (rows) with respect to joint types (column)***
-</center> 
- 
+</center>
+
 ## Welding Symbol & Nomenclature:
 
 Welding is the most frequently used joining process across various industries. Welding can be performed in multiple combinations of positions, welding types, and welding dimensions. Hence, welding symbols identify the exact welding uniquely and for communication purposes. A skilled welder should know these symbols and quickly decipher what type of joint, position, and dimensions of the weld is needed for the job.
