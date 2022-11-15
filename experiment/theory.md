@@ -22,7 +22,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
  
  Figure 2 shows the types of the joint design commonly used in welding processes.
 <center>
-<img src="./images/Tfig2.png">
+<img src="./images/Tfig2.jpg">
 
 ***Figure 2: Schematic representation of different types of weld joints***
 </center> 
@@ -30,7 +30,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 ### Butt joint:
      A butt joint is the simplest and most used type of weld joint design in the industry. Two workpieces are placed together along an edge in the same plane and welded, as seen the Figure 2. Butt joints have high strength and are easy to machine and inspect. For plates with larger thicknesses edge preparation  (grooves) is needed. Butt joints are generally used in welding plates, sheet metal, and pipes. 
 <center>
-<img src="./images/Tfig3.png">
+<img src="./images/Tfig3.jpg">
 
 ***Figure 3: Schematic representation of the Butt weld joint.***
 </center> 
@@ -40,7 +40,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
        A corner joint is made between two workpieces aligned at an approximately right angle forming an “L” shape as illustrated schematically in Figure 3. Fixtures are required for positioning this type of weld. The corner joint is most often found in low load-carrying applications such as the manufacturing of boxes, tanks, box frames, and in sheet metal work. 
  
  <center>
-<img src="./images/Tfig4.png">
+<img src="./images/Tfig4.jpg">
 
 ***Figure 4: Schematic representation of Corner weld joint.***
 </center> 
@@ -49,7 +49,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 ### Lap Joint: 
      A lap joint is made when two workpieces are placed overlapping each other as seen in Figure 4. They are one of the strongest joints and can also be used to weld workpieces with different thicknesses. No edge preparation is required, although a bevel may be used to guarantee full root fusion. It is heavily used in automobile assembly applications, and also used when joining thin sheets together.
 <center>
-<img src="./images/Tfig5.png">
+<img src="./images/Tfig5.jpg">
 
 ***Figure 5: Schematic representation of Lap weld joint.***
 </center> 
@@ -58,7 +58,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
       Similar to the corner joints, two workpieces are placed at a right angle, but instead of making an L shape, it makes a T shape. Figure 5 illustrates a common tee joint. Tee joints are made when we need to join workpieces at right angles (such as a tube or pipe to a base plate, or a plate to another plate) T joints are usually prepared without grooves unless the base plate is thick. Welding is generally carried on both sides to improve the load-carrying capacity of the joint. 
  
 <center>
-<img src="./images/Tfig6.png">
+<img src="./images/Tfig6.jpg">
 
 ***Figure 6: Schematic representation of Tee weld joint.***
 </center> 
@@ -67,7 +67,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 Edge joints are formed by welding the edges of two workpieces together having flanging edges. It may be formed by bending one or both plates at an angle. The edges of the workpieces are parallel or nearly parallel. An example of an edge joint can be seen in figure 6. It is not the strongest of the joints as the weld does not fully penetrate the joint thickness. It is generally used to join sheet metal of less than 0.25-inch thickness that is not subjected to heavy load.
  
 <center>
-<img src="./images/Tfig7.png">
+<img src="./images/Tfig7.jpg">
 
 ***Figure 7: Schematic representation of Edge weld joint.***
 </center> 
@@ -78,7 +78,7 @@ Edge joints are formed by welding the edges of two workpieces together having fl
        Fillet weld joins two surfaces at the right angle to each other. It is triangular in shape which can be a convex, concave, or flat surface, and is generally used in the Tee joint, corner joint, and lap joint as illustrated in figure 8. Fillet welds are inexpensive and easy to prepare as edge preparation is generally not required. 
 
 <center>
-<img src="./images/Tfig8.png">
+<img src="./images/Tfig8.jpg">
 
 ***Figure 8: Schematic representation of various fillet weld joints***
 </center> 
@@ -89,7 +89,7 @@ Edge joints are formed by welding the edges of two workpieces together having fl
 After the fillet weld, they are the 2nd most popular weld choice. It is used in various joints of various types of groove welds determined by the edge preparation can be seen below. The most economical is the square groove welds.  
 
 <center>
-<img src="./images/Tfig9.png">
+<img src="./images/Tfig9.jpg">
 
 ***Figure 9: Schematic representation of various Groove weld joints***
 </center> 
@@ -119,7 +119,7 @@ American Welding Society has broadly categorized welding positions into major fo
 
 The difficulty level for the welding increases from Flat to horizontal to vertical to overhead position.
 <center>
-<img src="./images/Tfig11.png">
+<img src="./images/Tfig11.jpg">
 
 ***Figure 11: Schematic of the welding positions (rows) with respect to joint types (column)***
 </center> 
@@ -146,7 +146,7 @@ Symbols are placed on either side giving out information of the respective sides
 Figure 12 illustrates the welding symbol with the different elements that helps in representing the weld to be made. 
 
 <center>
-<img src="./images/Tfig12.png">
+<img src="./images/Tfig12.jpg">
 
 ***Figure 12: Representation of the weld symbols and the basic elements***
 </center> 
