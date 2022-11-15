@@ -30,7 +30,9 @@ Figure 2 shows the types of the joint design commonly used in welding processes.
 </center>
 
 ### Butt joint:
-     A butt joint is the simplest and most used type of weld joint design in the industry. Two workpieces are placed together along an edge in the same plane and welded, as seen the Figure 2. Butt joints have high strength and are easy to machine and inspect. For plates with larger thicknesses edge preparation  (grooves) is needed. Butt joints are generally used in welding plates, sheet metal, and pipes. 
+
+A butt joint is the simplest and most used type of weld joint design in the industry. Two workpieces are placed together along an edge in the same plane and welded, as seen the Figure 2. Butt joints have high strength and are easy to machine and inspect. For plates with larger thicknesses edge preparation  (grooves) is needed. Butt joints are generally used in welding plates, sheet metal, and pipes.
+
 <center>
 <img src="./images/Tfig3.png">
 
