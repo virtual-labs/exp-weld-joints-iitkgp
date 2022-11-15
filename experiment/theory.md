@@ -66,8 +66,8 @@ Similar to the corner joints, two workpieces are placed at a right angle, but in
 <img src="./images/Tfig6.jpg">
 
 ***Figure 6: Schematic representation of Tee weld joint.***
-</center> 
- 
+</center>
+
 ### Edge joint:
 
 Edge joints are formed by welding the edges of two workpieces together having flanging edges. It may be formed by bending one or both plates at an angle. The edges of the workpieces are parallel or nearly parallel. An example of an edge joint can be seen in figure 6. It is not the strongest of the joints as the weld does not fully penetrate the joint thickness. It is generally used to join sheet metal of less than 0.25-inch thickness that is not subjected to heavy load.
