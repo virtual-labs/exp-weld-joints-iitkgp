@@ -10,6 +10,7 @@ To manufacture different material parts into valuable shapes for various functio
 
 # Theory:
 ## Weld joints
+
 Welding is a fabrication process that is used to join diverse materials together such as metals and polymers employing heat, pressure, or both. The pieces that are to be joined are known as workpieces. The workpieces are brought close together to form a coalescence with or without melting the faying surface which leads to the interatomic attraction between the atoms helping them to fuse. A complete and sound weld joint at this interface is known as a weldment.
 
 Understanding of the different types of weld joints is crucial knowledge that a skilled welder should have, as different welding interfaces require different types of welds and joints. According to the American Welding Society (AWS), there are five basic weld joints:
@@ -20,7 +21,8 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 - Tee joint and 
 - Edge joint 
  
- Figure 2 shows the types of the joint design commonly used in welding processes.
+Figure 2 shows the types of the joint design commonly used in welding processes.
+
 <center>
 <img src="./images/Tfig2.jpg">
 
@@ -28,7 +30,9 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 </center> 
  
 ### Butt joint:
-     A butt joint is the simplest and most used type of weld joint design in the industry. Two workpieces are placed together along an edge in the same plane and welded, as seen the Figure 2. Butt joints have high strength and are easy to machine and inspect. For plates with larger thicknesses edge preparation  (grooves) is needed. Butt joints are generally used in welding plates, sheet metal, and pipes. 
+
+A butt joint is the simplest and most used type of weld joint design in the industry. Two workpieces are placed together along an edge in the same plane and welded, as seen the Figure 2. Butt joints have high strength and are easy to machine and inspect. For plates with larger thicknesses edge preparation  (grooves) is needed. Butt joints are generally used in welding plates, sheet metal, and pipes. 
+
 <center>
 <img src="./images/Tfig3.jpg">
 
@@ -37,9 +41,10 @@ Understanding of the different types of weld joints is crucial knowledge that a 
  
 
 ### Corner Joint:
-       A corner joint is made between two workpieces aligned at an approximately right angle forming an “L” shape as illustrated schematically in Figure 3. Fixtures are required for positioning this type of weld. The corner joint is most often found in low load-carrying applications such as the manufacturing of boxes, tanks, box frames, and in sheet metal work. 
+      
+A corner joint is made between two workpieces aligned at an approximately right angle forming an “L” shape as illustrated schematically in Figure 3. Fixtures are required for positioning this type of weld. The corner joint is most often found in low load-carrying applications such as the manufacturing of boxes, tanks, box frames, and in sheet metal work. 
  
- <center>
+<center>
 <img src="./images/Tfig4.jpg">
 
 ***Figure 4: Schematic representation of Corner weld joint.***
@@ -47,7 +52,8 @@ Understanding of the different types of weld joints is crucial knowledge that a 
  
  
 ### Lap Joint: 
-     A lap joint is made when two workpieces are placed overlapping each other as seen in Figure 4. They are one of the strongest joints and can also be used to weld workpieces with different thicknesses. No edge preparation is required, although a bevel may be used to guarantee full root fusion. It is heavily used in automobile assembly applications, and also used when joining thin sheets together.
+
+A lap joint is made when two workpieces are placed overlapping each other as seen in Figure 4. They are one of the strongest joints and can also be used to weld workpieces with different thicknesses. No edge preparation is required, although a bevel may be used to guarantee full root fusion. It is heavily used in automobile assembly applications, and also used when joining thin sheets together.
 <center>
 <img src="./images/Tfig5.jpg">
 
@@ -55,7 +61,8 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 </center> 
 
 ###  Tee joint:
-      Similar to the corner joints, two workpieces are placed at a right angle, but instead of making an L shape, it makes a T shape. Figure 5 illustrates a common tee joint. Tee joints are made when we need to join workpieces at right angles (such as a tube or pipe to a base plate, or a plate to another plate) T joints are usually prepared without grooves unless the base plate is thick. Welding is generally carried on both sides to improve the load-carrying capacity of the joint. 
+
+Similar to the corner joints, two workpieces are placed at a right angle, but instead of making an L shape, it makes a T shape. Figure 5 illustrates a common tee joint. Tee joints are made when we need to join workpieces at right angles (such as a tube or pipe to a base plate, or a plate to another plate) T joints are usually prepared without grooves unless the base plate is thick. Welding is generally carried on both sides to improve the load-carrying capacity of the joint. 
  
 <center>
 <img src="./images/Tfig6.jpg">
@@ -64,6 +71,7 @@ Understanding of the different types of weld joints is crucial knowledge that a 
 </center> 
  
 ### Edge joint:
+
 Edge joints are formed by welding the edges of two workpieces together having flanging edges. It may be formed by bending one or both plates at an angle. The edges of the workpieces are parallel or nearly parallel. An example of an edge joint can be seen in figure 6. It is not the strongest of the joints as the weld does not fully penetrate the joint thickness. It is generally used to join sheet metal of less than 0.25-inch thickness that is not subjected to heavy load.
  
 <center>
@@ -73,7 +81,9 @@ Edge joints are formed by welding the edges of two workpieces together having fl
 </center> 
  
 ## Types of weld:
+
  Mainly three different types of welding are used i.e. fillet weld, groove weld and surface weld.
+
 ### Fillet Weld: 
        Fillet weld joins two surfaces at the right angle to each other. It is triangular in shape which can be a convex, concave, or flat surface, and is generally used in the Tee joint, corner joint, and lap joint as illustrated in figure 8. Fillet welds are inexpensive and easy to prepare as edge preparation is generally not required. 
 
@@ -84,7 +94,7 @@ Edge joints are formed by welding the edges of two workpieces together having fl
 </center> 
  
 ### Groove weld: 
-       Groove weld as the name suggests refers to the weld deposited in grooves between two workpieces. The edge is prepared for one or more workpieces to allow access throughout the cross-section, during the welding of thick plates. The grooves can be made with different types of designs i.e., V groove, J groove, bevel,and U groove. Groove design changes depend upon whether full or partial penetration is required as illustrated in figure 9.
+Groove weld as the name suggests refers to the weld deposited in grooves between two workpieces. The edge is prepared for one or more workpieces to allow access throughout the cross-section, during the welding of thick plates. The grooves can be made with different types of designs i.e., V groove, J groove, bevel,and U groove. Groove design changes depend upon whether full or partial penetration is required as illustrated in figure 9.
 
 After the fillet weld, they are the 2nd most popular weld choice. It is used in various joints of various types of groove welds determined by the edge preparation can be seen below. The most economical is the square groove welds.  
 
@@ -95,7 +105,7 @@ After the fillet weld, they are the 2nd most popular weld choice. It is used in 
 </center> 
  
 ### Surface weld 
-    The deposition of metal on the surface of the workpiece with the help of welding processes is called surface welding. This is also termed as bead on plate and is illustrated in figure 10. It is an economical way of extending and conserving the life of tools and machines. Different chemical or mechanical properties can be achieved for the surface with a surface weld.  
+The deposition of metal on the surface of the workpiece with the help of welding processes is called surface welding. This is also termed as bead on plate and is illustrated in figure 10. It is an economical way of extending and conserving the life of tools and machines. Different chemical or mechanical properties can be achieved for the surface with a surface weld.  
 
 <center>
 <img src="./images/Tfig10.png">
@@ -105,7 +115,7 @@ After the fillet weld, they are the 2nd most popular weld choice. It is used in 
  
 ## Welding Positions:
  
-    Depending on the application of the parts, welding needs to be performed in various positions. Not all welding processes are capable of welding in all positions and weld parameters also need to be modified to weld in different positions. For example, welding in an overhead position may be needed in structural applications. Welders are expected to practice welding in any position. Some welding jobs can be done in any position while some are limited to just one or two.
+Depending on the application of the parts, welding needs to be performed in various positions. Not all welding processes are capable of welding in all positions and weld parameters also need to be modified to weld in different positions. For example, welding in an overhead position may be needed in structural applications. Welders are expected to practice welding in any position. Some welding jobs can be done in any position while some are limited to just one or two.
 
 American Welding Society has broadly categorized welding positions into major four as can be seen schematically in figure 11:
 
@@ -125,7 +135,7 @@ The difficulty level for the welding increases from Flat to horizontal to vertic
 </center> 
  
 ## Welding Symbol & Nomenclature:
-      Welding is the most frequently used joining process across various industries. Welding can be performed in multiple combinations of positions, welding types, and welding dimensions. Hence, welding symbols identify the exact welding uniquely and for communication purposes. A skilled welder should know these symbols and quickly decipher what type of joint, position, and dimensions of the weld is needed for the job.
+Welding is the most frequently used joining process across various industries. Welding can be performed in multiple combinations of positions, welding types, and welding dimensions. Hence, welding symbols identify the exact welding uniquely and for communication purposes. A skilled welder should know these symbols and quickly decipher what type of joint, position, and dimensions of the weld is needed for the job.
 
 The primary welding symbol comprises of the following: 
  
