@@ -4,7 +4,7 @@
 | 1 | **Prof. C S Kumar** | **kumar@mech.iitkgp.ac.in** | **Indian Institute of Technology Kharagpur** | ***[Profile](http://facweb.iitkgp.ernet.in/~cskumar/)*** |
 | 2 | **Prof. Siddharth Tamang** | **stamang@mech.iitkgp.ac.in** | **Indian Institute of Technology Kharagpur** | ***[Profile](http://www.iitkgp.ac.in/department/ME/faculty/me-stamang)*** |
 
-## Developers and Integration Engineers
+## Developer and Integration Engineer
 | SrNo | Name | Designation | Department | Institute |
 | :---: | :---: | :---: | :---: | :---: |
 | 1 | **Aditya Kameswara Rao Nandula** | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur |
