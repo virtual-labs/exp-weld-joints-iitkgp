@@ -2,37 +2,58 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which organisation sets standards for welding ?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "American Welding Society (AWS)",
+        "b": "American Institute of Steel",
+        "c": "American Society of Mechanical Engineers",
+        "d": "Edison Welding Institute (EWI)"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which joint is made by placing two workpieces at the same plane ?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Butt Joint",
+        "b": "Corner Joint",
+        "c": "Lap Joint",
+        "d": "Tee Joint"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In which joint workpieces are aligned at a 90-degree angle forming an “L” shape?",
+      "answers": {
+        "a": "Butt Joint",
+        "b": "Corner Joint",
+        "c": "Lap Joint",
+        "d": "Tee Joint"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which welding position denotes the vertical welding of plates?",
+      "answers": {
+        "a": "1G",
+        "b": "2G",
+        "c": "3G",
+        "d": "4G"
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In weld symbols which component helps in identifying the weld side ?",
+      "answers": {
+        "a": "Referance line",
+        "b": "Arrow",
+        "c": "Tail",
+        "d": "Finish Symbols"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
