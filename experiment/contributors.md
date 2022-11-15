@@ -6,7 +6,7 @@
 
 ## Developers and Integration Engineers
 | SrNo | Name | Designation | Department | Institute |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: |
 | 1 | **Aditya Kameswara Rao Nandula** | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur |
 | 2 | **Sujata Madke** | Research Engineer | Department of Mechanical Engineering | IIT Kharagpur |
 
