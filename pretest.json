@@ -1,0 +1,60 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which organisation sets standards for welding ?",
+      "answers": {
+        "a": "American Welding Society (AWS)",
+        "b": "American Institute of Steel",
+        "c": "American Society of Mechanical Engineers",
+        "d": "Edison Welding Institute (EWI)"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which joint is made by placing two workpieces at the same plane ?",
+      "answers": {
+        "a": "Butt Joint",
+        "b": "Corner Joint",
+        "c": "Lap Joint",
+        "d": "Tee Joint"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In which joint workpieces are aligned at a 90-degree angle forming an “L” shape?",
+      "answers": {
+        "a": "Butt Joint",
+        "b": "Corner Joint",
+        "c": "Lap Joint",
+        "d": "Tee Joint"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which welding position denotes the vertical welding of plates?",
+      "answers": {
+        "a": "1G",
+        "b": "2G",
+        "c": "3G",
+        "d": "4G"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In weld symbols which component helps in identifying the weld side ?",
+      "answers": {
+        "a": "Referance line",
+        "b": "Arrow",
+        "c": "Tail",
+        "d": "Finish Symbols"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

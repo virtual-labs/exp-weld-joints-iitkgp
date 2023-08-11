@@ -1,0 +1,136 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following represents a horizontal groove weld direction ?",
+      "answers": {
+        "a": "1F",
+        "b": "2G",
+        "c": "3G",
+        "d": "4F"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does 4F mean ?",
+      "answers": {
+        "a": "Flat groove welding position ",
+        "b": "Flat fillet welding position ",
+        "c": "Vertical fillet welding position",
+        "d": "Overhead fillet welding position "
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The type of joint where one workpiece is placed in an overlapping position on the other workpiece ?",
+      "answers": {
+        "a": "Butt joint",
+        "b": "Groove joint",
+        "c": "Lap joint",
+        "d": "T joint "
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which among the following is the most difficult welding position?",
+      "answers": {
+        "a": "Flat ",
+        "b": "Horizontal",
+        "c": "Overhead",
+        "d": "Vertical"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Double V groove welds are preferred over single V groove welds for thicker plates ?",
+      "answers": {
+        "a": "True",
+        "b": "False"
+        
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is an essential element in a welding symbol ?",
+      "answers": {
+        "a": "Dimensions",
+        "b": "Finish symbols",
+        "c": "Reference line ",
+        "d": "Tail "
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does ‘G’ represent in basic weld symbols ?",
+      "answers": {
+        "a": "Groove weld ",
+        "b": "Machining finish",
+        "c": "Grinding finish ",
+        "d": "Chipping finish "
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does the information present below the reference line in a weld symbol refer to ?",
+      "answers": {
+        "a": "Arrow side ",
+        "b": "Tail side",
+        "c": "Other side ",
+        "d": "Left side "
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }, 
+    {
+      "question": "What type of weld does the weld symbol ‘X’ represent ?",
+      "answers": {
+        "a": "Single Bevel Butt",
+        "b": "Double Bevel Butt",
+        "c": "Double V Butt",
+        "d": "Single U Butt "
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Pick the right choice for a weld symbol ?",
+      "answers": {
+        "a": "Weld size is shown to the left and weld length is shown to the right ",
+        "b": "Weld size is shown to the right and weld length is shown to the left ",
+        "c": "Both weld size and weld length are shown to the right ",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The joint where the workpieces are in planes perpendicular to each other is ?",
+      "answers": {
+        "a": "Butt joint ",
+        "b": "Tee joint ",
+        "c": "Lap joint ",
+        "d": "Edge joint "
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How is a square butt represented ?",
+      "answers": {
+        "a": "V",
+        "b": "||",
+        "c": "─",
+        "d": "U"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}
