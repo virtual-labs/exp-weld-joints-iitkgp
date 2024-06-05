@@ -9,7 +9,7 @@
         "c": "American Society of Mechanical Engineers",
         "d": "Edison Welding Institute (EWI)"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"You are right",
         "b":"Your are Wrong, Option \"a\" is correct answer",
         "c":"Your are Wrong, Option \"a\" is correct answer",
@@ -26,7 +26,7 @@
         "c": "Lap Joint",
         "d": "Tee Joint"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"You are right",
         "b":"Your are Wrong, Option \"a\" is correct answer",
         "c":"Your are Wrong, Option \"a\" is correct answer",
@@ -43,7 +43,7 @@
         "c": "Lap Joint",
         "d": "Tee Joint"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"b\" is correct answer",
         "b":"You are right",
         "c":"Your are Wrong, Option \"b\" is correct answer",
@@ -61,7 +61,7 @@
         "c": "3G",
         "d": "4G"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"c\" is correct answer",
         "b":"Your are Wrong, Option \"c\" is correct answer",
         "c":"You are right",
@@ -78,7 +78,7 @@
         "c": "Tail",
         "d": "Finish Symbols"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"You are right",
         "b":"Your are Wrong, Option \"a\" is correct answer",
         "c":"Your are Wrong, Option \"a\" is correct answer",
