@@ -1,0 +1,7 @@
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/license/view.js
+  1:246  warning  Unnecessary semicolon  no-extra-semi
+
+✖ 1 problem (0 errors, 1 warning)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
