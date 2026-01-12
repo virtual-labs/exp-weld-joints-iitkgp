@@ -1,0 +1,46 @@
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/license/view.js
+  1:246  warning  Unnecessary semicolon  no-extra-semi
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/simulation/Simulation_New/js/adibuvgg1.js
+   30:5   warning  '$' is not defined                        no-undef
+  116:7   warning  'ctr' is assigned a value but never used  no-unused-vars
+  198:15  warning  'dir' is assigned a value but never used  no-unused-vars
+  318:5   warning  '$' is not defined                        no-undef
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/simulation/Simulation_New/js/adibuvgg2.js
+   30:5   warning  '$' is not defined                        no-undef
+  197:15  warning  'dir' is assigned a value but never used  no-unused-vars
+  236:7   warning  'ctr' is assigned a value but never used  no-unused-vars
+  237:21  warning  'k' is assigned a value but never used    no-unused-vars
+  321:5   warning  '$' is not defined                        no-undef
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/simulation/Simulation_New/js/adibuvgg3.js
+   30:5   warning  '$' is not defined                        no-undef
+  197:15  warning  'dir' is assigned a value but never used  no-unused-vars
+  236:7   warning  'ctr' is assigned a value but never used  no-unused-vars
+  237:21  warning  'k' is assigned a value but never used    no-unused-vars
+  321:5   warning  '$' is not defined                        no-undef
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/simulation/Simulation_New/js/adibuvgg4.js
+   30:5   warning  '$' is not defined                        no-undef
+  198:15  warning  'dir' is assigned a value but never used  no-unused-vars
+  239:7   warning  'ctr' is assigned a value but never used  no-unused-vars
+  240:21  warning  'k' is assigned a value but never used    no-unused-vars
+  324:5   warning  '$' is not defined                        no-undef
+
+/home/runner/work/exp-weld-joints-iitkgp/exp-weld-joints-iitkgp/experiment/simulation/Simulation_New/js/adiwep1.js
+   2:1   warning  '$' is not defined  no-undef
+   3:5   warning  '$' is not defined  no-undef
+   4:5   warning  '$' is not defined  no-undef
+   7:1   warning  '$' is not defined  no-undef
+   8:18  warning  '$' is not defined  no-undef
+   8:56  warning  '$' is not defined  no-undef
+   8:94  warning  '$' is not defined  no-undef
+   9:5   warning  '$' is not defined  no-undef
+  11:9   warning  '$' is not defined  no-undef
+  18:13  warning  '$' is not defined  no-undef
+
+✖ 30 problems (0 errors, 30 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
