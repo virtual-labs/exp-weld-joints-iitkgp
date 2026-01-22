@@ -91,7 +91,7 @@ stldr.load(ar, function ( arn ) {
     arnme = new THREE.Mesh( arn, arma );
 	scn.add( arnme );
     arnme.rotation.set( -Math.PI/2*0, Math.PI/2*0, Math.PI/2*0 );
-    arnme.position.set(-sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.395, sizs.wd / sizs.ht*0.15);
+    arnme.position.set(-sizs.wd / sizs.ht*0.00, -sizs.wd / sizs.ht*0.395, sizs.wd / sizs.ht*0.15);
     arnme.scale.set(l,b,h);
     arnme.castShadow = true;
     arnme.receiveShadow = true;
@@ -102,14 +102,6 @@ stldr.load(ar, function ( arn ) {
 
 } );
 
-
-const wr = new THREE.CylinderGeometry(1,1,3,15);
-const wrm = new THREE.MeshMatcapMaterial( {color: '#5a6977'} );
-const wrv = new THREE.Mesh( wr, wrm );
-wrv.rotation.set( -Math.PI/2, Math.PI*0, Math.PI/8);
-wrv.position.set(sizs.wd / sizs.ht*0.08, sizs.wd / sizs.ht*0.4, sizs.wd / sizs.ht*0.25);
-wrv.scale.set(l*20,b*150,h*10.0);
-scn.add(wrv);
 
 let wbv = new THREE.Shape();
 wbv.moveTo( 0,0 );
@@ -127,13 +119,15 @@ var extset = {
 const gmtf = new THREE.ExtrudeGeometry( wbv, extset );
 const matf = new THREE.MeshBasicMaterial( { color: 0x404040, wireframe: false, side: THREE.DoubleSide } );
 const fill = new THREE.Mesh( gmtf, matf );
-fill.position.set(-sizs.wd / sizs.ht*0, sizs.wd / sizs.ht*0.4, sizs.wd / sizs.ht*0.005);
+fill.position.set(-sizs.wd / sizs.ht*0, -sizs.wd / sizs.ht*0.4, sizs.wd / sizs.ht*0.005);
 fill.rotation.set( Math.PI/2*1, -Math.PI/2*0, -Math.PI/2*0);
 fill.scale.set(((sizs.wd / sizs.ht)*0.026).toFixed(4),((sizs.wd / sizs.ht)*0.042).toFixed(4),((sizs.wd / sizs.ht)*0.12).toFixed(4));
-scn.add( fill );
+scn.add(fill);
 
 
 const ctr = new OrbitControls(cam, cnvs);
+ctr.enableRotate=false;
+ctr.enableZoom=false;
 
 const lstnr = new THREE.AudioListener();
 cam.add(lstnr);
@@ -264,23 +258,18 @@ const loop = () => {
     
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
         adit();
-        trnme.position.set(-sizs.wd / sizs.ht*0.0, sizs.wd / sizs.ht*0.4-m, sizs.wd / sizs.ht*0.4);
-        arnme.position.set(-sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.395-m, sizs.wd / sizs.ht*0.15);
+        trnme.position.set(-sizs.wd / sizs.ht*0.0, -sizs.wd / sizs.ht*0.4+m, sizs.wd / sizs.ht*0.4);
+        arnme.position.set(-sizs.wd / sizs.ht*0.00, -sizs.wd / sizs.ht*0.395+m, sizs.wd / sizs.ht*0.15);
         lblupd(trnme,ecblsprt,ecblarw,ecblof);
 
         rndr.render(scn,cam);
         k+=sizs.wd / sizs.ht*0.0011;
         m+=sizs.wd / sizs.ht*0.0019;    
         
-        wrv.position.x +=sizs.wd / sizs.ht*0.000;
-        wrv.position.y -=sizs.wd / sizs.ht*0.0019;
-        wrv.position.z -=sizs.wd / sizs.ht*0.000085;
-        wrv.scale.set(l*20,b*150-i/8,h*10.0);
-        
         i+=sizs.wd / sizs.ht*0.001455;
         extset = {
             steps: j,
-            depth: j/100,
+            depth: -j/100,
             bevelEnabled: false
         };
         
@@ -292,7 +281,6 @@ const loop = () => {
     else {
             if(adi==0){
                 scn.remove(mldme);
-                scn.remove(wrv);
                 scn.remove(fill);
                 scn.remove(arnme);
                 ml='./images/buv/mswb.stl';
@@ -311,7 +299,7 @@ const loop = () => {
                 console.error( error );
 
                 } );
-                trnme.position.set(-sizs.wd / sizs.ht*0.0, sizs.wd / sizs.ht*0.4-m*1.5, sizs.wd / sizs.ht*0.4);
+                trnme.position.set(-sizs.wd / sizs.ht*0.0, -sizs.wd / sizs.ht*0.4+m*1.5, sizs.wd / sizs.ht*0.4);
                 lblupd(trnme,ecblsprt,ecblarw,ecblof);
                 console.clear();
                 adi=adi+1;
