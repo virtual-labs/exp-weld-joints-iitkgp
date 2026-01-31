@@ -1,12 +1,26 @@
 
 $(document).ready(function(){
     $('#cnv').hide();
-    $('#adism').hide();
+    
     
 });
 
+
+$('#strb').click(function(){
+    $('#inst').hide();
+    $('#strbc').show();
+    $('#stbc').hide();
+});
+
+
+$('#stb').click(function(){
+    $('#inst').hide();
+    $('#stbc').show();
+    $('#strbc').hide();
+});
+
 $("#wldbtn").click(function(){
-  let adiw='adi'+$('#swj .nav-link.active').attr("id")+$('#sgt .nav-link.active').attr("id")+$('#sor .nav-link.active').attr("id");
+  let adiw='adibuvg'+$('#sor .nav-link.active').attr("id");
     $('#cnv').show();
     if(adiw.length==9){
         $("#adicnv").html("<canvas id=\"wes\" style=\"width:100%; height:25%\" class=\"border border-5 border-primary rounded rounded-5\"> <script id=\"adiweld\"></script>");    

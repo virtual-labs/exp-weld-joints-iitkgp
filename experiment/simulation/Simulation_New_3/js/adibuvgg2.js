@@ -125,6 +125,24 @@ fill.rotation.set( Math.PI/2*0, -Math.PI/2*0, -Math.PI/2);
 fill.scale.set(((sizs.wd / sizs.ht)*0.026).toFixed(4),((sizs.wd / sizs.ht)*0.042).toFixed(4),((sizs.wd / sizs.ht)*0.12).toFixed(4));
 scn.add( fill );
 
+let wbvc = new THREE.Shape();
+wbvc.moveTo( 0,0 );
+wbvc.absarc(0, 0, parseFloat((sizs.wd / sizs.ht + 0.02).toFixed(3)), 0, Math.PI, false);
+wbvc.closed=true;
+var extsetc = {
+	steps: 0,
+	depth: 0,
+	bevelEnabled: false,    
+};
+
+const gmtfc = new THREE.ExtrudeGeometry( wbvc, extsetc );
+const matfc = new THREE.MeshBasicMaterial( { color: 0x404040, wireframe: false, side: THREE.DoubleSide } );
+const filc = new THREE.Mesh( gmtfc, matfc );
+filc.position.set(sizs.wd / sizs.ht*0.099, sizs.wd / sizs.ht*0.000, sizs.wd / sizs.ht*0.4);
+filc.rotation.set( Math.PI/1*0, -Math.PI/6*0, -Math.PI/2);
+filc.scale.set(((sizs.wd / sizs.ht)*0.046).toFixed(4),((sizs.wd / sizs.ht)*0.020).toFixed(4),((sizs.wd / sizs.ht)*0.12).toFixed(4));
+scn.add( filc );
+
 
 const ctr = new OrbitControls(cam, cnvs);
 ctr.enableRotate=false;
@@ -139,13 +157,15 @@ adldr.load('./images/Wldsd.mp3', (buffer) => {
 });
 
 
-const adit = () => {
-            aud.playbackRate = 2.0;
-                aud.play();
-                setTimeout(() => {
+const adit = (x) => {
+            aud.playbackRate = 2.5;
+            if(x==1){
+                aud.play();}
+                else if(x==0){
                     aud.stop();
-                }, 100);
+                }
         };
+
 function lblupd(objprt,sprt,arw,upof){
     if (!objprt || !sprt || !arw) return;
         const lblps = objprt.position.clone().add(upof);
@@ -254,8 +274,15 @@ let i=0,j=0, adi=0, k=sizs.wd / sizs.ht*0.0011, m=sizs.wd / sizs.ht*0.0019;
 
 const loop = () => {
 
+    if(i==0){
+    setTimeout(function() {window.requestAnimationFrame(loop);},50);
+    
+    }
+    else  if(i<= ((sizs.wd / sizs.ht)*0.5252555))  {
+      adit(1);
+      window.requestAnimationFrame(loop);
+    }
     rndr.render(scn,cam);
-    window.requestAnimationFrame(loop);
     
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
         adit();
@@ -267,25 +294,28 @@ const loop = () => {
 
         rndr.render(scn,cam);
         k+=sizs.wd / sizs.ht*0.0011;
-        m+=sizs.wd / sizs.ht*0.0019;    
+        m+=sizs.wd / sizs.ht*0.002;    
         
         
         i+=sizs.wd / sizs.ht*0.001455;
         extset = {
-            steps: j,
+            steps: 10,
             depth: -j/100,
             bevelEnabled: false
         };
         
         fill.geometry= new THREE.ExtrudeGeometry( wbv, extset );
+        filc.geometry= new THREE.ExtrudeGeometry( wbvc, extset );
         j=j+1.85;
         console.clear();
         rndr.render(scn,cam);
         }
     else {
+        adit(0);
             if(adi==0){
                 scn.remove(mldme);
                 scn.remove(fill);
+                scn.remove(filc);
                 scn.remove(arnme);
                 ml='./images/buv/mswb.stl';
                 stldr.load(ml, function ( mld ) {
