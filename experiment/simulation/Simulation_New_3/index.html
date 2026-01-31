@@ -56,16 +56,28 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <p class="bg-success"> <h3 class=" my-5 text-primary text-center" onclick="$('#inst').show();" > Instructions: </h3>
-            <ol id="inst">
+            <ul id="inst">
               <li> <span class="h6 text-secondary"> Before starting the process read the instructions completely</span></li>
-              <li> Press <b class="text-primary"> Start </b> button to start the simulator.</li>
+              <li>Select the button <b class="text-primary">Types of Weld Joints </b> or <b class="text-primary">Weld Position Simulation</b> </li>
+              <li>If <b class="text-primary">Types of Weld Joints </b> is selected follow the steps below</li>
+              <ul>
               <li> Select the type of <b class="text-primary"> Weld joint</b></li>
               <li> Select the <b class="text-primary"> Groove type</b> of weld as per the requirement.</li>
               <li> Select the <b class="text-primary">Weld position</b> from <b class="text-primary"> (1G, 2G, 3G, 4G)</b> where you want to perform the welding operation.</li>
-              <li>Click on the <b class="text-primary">Weld on</b> button to start the simulation</li>
+              <li>Observe the image and its position as per your selection</li>
               <li> Click on the <b class="text-primary">Stop</b> button to stop the simulation</li>
-              <li>Repeat the experiment by selecting a different Weld joint, Groove type, and Orientation.</li>
-            </ol>
+              <li>Repeat the experiment by selecting a different Weld joint, Groove type, and Weld position.</li>
+              </ul>
+              <li>If <b class="text-primary">Weld Position Simulation</b> is selected follow the steps below</li>
+              <ul>
+              <li> Select the <b class="text-primary">Weld position</b> from <b class="text-primary"> (1G, 2G, 3G, 4G)</b> where you want to perform the welding operation.</li>
+              <li>Click on the <b class="text-primary">Weld on</b> button to start the simulation</li>
+              <li>Observe the welding simulation as per your selected position</li>
+              <li> Click on the <b class="text-primary">Stop</b> button to stop the simulation</li>
+              <li>Repeat the experiment by selecting a different Weld Position.</li>  
+            </ul>
+              
+            </ul>
           </p> 
           </div>
         <div class="col-md-1"></div>
@@ -73,13 +85,16 @@
     </div>
     
     <div class="container p-3 my-5 border">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 text-center">
-          <button type="button" class="btn btn-primary btn-lg rounded rounded-3" id="strb" onclick="$('#inst').hide(); $('#adism').show();"> Start </button>
-          <button type="button" class="btn btn-danger btn-lg rounded rounded-3" id="stb" onclick="window.location.reload();"> Stop </button>
+      <div class="row text-center">
+        <div class="col-md-4 ">  <button type="button" class="btn btn-primary btn-lg rounded rounded-3" id="strb" > <strong> Types of Weld Joints </strong> </button></div>
+        <div class="col-md-4 ">
+          <button type="button" class="btn btn-primary btn-lg rounded rounded-3" id="stb" ><strong> Weld Position Simulation </strong> </button>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-4 text-center"> 
+                  <button type="button" class="btn btn-danger text-white rounded rounded-5 p-3 border border-5" onclick="window.location.reload();">
+                      <span class="h5">&nbsp; Stop &nbsp;</span>
+                  </button></div>
+        
       </div>
     </div>
 
@@ -87,50 +102,1435 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tab-content">
-            <div id="strb" class="tab-pane active">
-              <div class="h2 text-primary p-2">
-                <div id="swj">
-                  <div class="h2 text-primary"><b><i> Select Weld Joint:</i></b></div><br>
-                  <ul class="nav nav-pills nav-justified" id="swj" role="tablist">
+            <div id="strbc" class="tab-pane">
+              <div class="container"><br>
+              <div class="h2 text-primary p-2"> <b><i> Select Weld joint:</i></b></div><br>
+                  <ul class="nav nav-pills nav-justified " role="tablist">
                     <li class="nav-item rounded border border-5">
-                      <a class="nav-link" data-bs-toggle="tab" href="#but" id="bu"><span class=" h4 " > Butt </span></a>
+                      <a class="nav-link" data-bs-toggle="tab" href="#but"><span class=" h4 "> Butt </span></a>
                     </li> &nbsp; &nbsp; &nbsp;
-                  </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-content">
-                <div id="but" class="tab-pane fade">
-                  <div class="h2 text-primary p-2" > <b><i> Select Groove Type:</i></b></div><br>
-                      <ul class="nav nav-pills nav-justified " id="sgt" role="tablist">
-                  <!--     <li class="nav-item rounded border border-5" >
-                          <a class="nav-link" data-bs-toggle="tab" href="#sorg" ><span class=" h4 " id="sq"> Square </span></a>
-                        </li> &nbsp; &nbsp;-->
+                    <li class="nav-item rounded border border-5">
+                      <a class="nav-link" data-bs-toggle="tab" href="#lap"><span class=" h4 "> Lap </span></a>
+                    </li> &nbsp; &nbsp; &nbsp;
+                    <li class="nav-item rounded border border-5">
+                      <a class="nav-link" data-bs-toggle="tab" href="#cor"><span class=" h4 "> Corner </span></a>
+                    </li> &nbsp; &nbsp; &nbsp;
+                    <li class="nav-item rounded border border-5">
+                      <a class="nav-link" data-bs-toggle="tab" href="#edg"><span class=" h4 "> Edge </span></a>
+                    </li> &nbsp; &nbsp; &nbsp;
+                    <li class="nav-item rounded border border-5">
+                      <a class="nav-link" data-bs-toggle="tab" href="#tee"><span class=" h4 "> Tee </span></a>
+                    </li>
+                    
+                  </ul><br>
+                  <div class="tab-content border">
+                    <div id="but" class="container tab-pane fade "><br>
+                      <div class="h2 text-primary p-2"> <b><i> Select Groove type:</i></b></div><br>
+                      <ul class="nav nav-pills nav-justified " role="tablist"> 
+                        <div class="col">
                         <li class="nav-item rounded border border-5">
-                          <a class="nav-link" data-bs-toggle="tab" href="#sorg" id="vg"><span class=" h4 "> V </span></a>
-                        </li> &nbsp; &nbsp;
-                      </ul>
-                </div><br>
-              </div>
+                          <a class="nav-link" data-bs-toggle="tab" href="#sqr"><span class=" h4 "> Square </span></a>
+                        </li>
+                        </div> &nbsp;
+                        <div class="col">
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#b"><span class=" h4 "> Bevel </span></a>
+                          </li><br>
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#db"><span class=" h4 "> Double Bevel </span></a>
+                          </li>
+                          </div>&nbsp;
+                          <div class="col">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#v"><span class=" h4 "> V </span></a>
+                            </li><br>
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#dv"><span class=" h4 "> Double V </span></a>
+                            </li>
+                            </div>&nbsp;
+                            <div class="col">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#j"><span class=" h4 "> J </span></a>
+                              </li><br>
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#dj"><span class=" h4 "> Double J </span></a>
+                              </li>
+                              </div>&nbsp;
+                              <div class="col">
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#u"><span class=" h4 "> U </span></a>
+                                </li><br>
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#du"><span class=" h4 "> Double U </span></a>
+                                </li>
+                                </div>&nbsp;
+                      </ul><br>
+                      <div class="tab-content border">
+                        <div id="sqr" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btsqr1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btsqr2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btsqr3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btsqr4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
 
-              <div class="tab-content">
-                <div id="sorg" class="tab-pane fade">
-                  <div class="container text-primary p-5 ">
+                          <div class="tab-content border">
+                            <div id="btsqr1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_square_1G.png" alt="Butt Square 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Square 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btsqr2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_square_2G.png" alt="Butt Square 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Square 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btsqr3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_square_3G.png" alt="Butt Square 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Square 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btsqr4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_square_4G.png" alt="Butt Square 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Square 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="b" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btb1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btb2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btb3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btb4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btb1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_bevel_1G.png" alt="Butt Bevel 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Bevel 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btb2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_bevel_2G.png" alt="Butt Bevel 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Bevel 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btb3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_bevel_3G.png" alt="Butt Bevel 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Bevel 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btb4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_bevel_4G.png" alt="Butt Bevel 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Bevel 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="db" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdb1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdb2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdb3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdb4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btdb1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_bevel_1G.png" alt="Butt Double Bevel 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double Bevel 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdb2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_bevel_2G.png" alt="Butt Double Bevel 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double Bevel 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdb3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_bevel_3G.png" alt="Butt Double Bevel 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double Bevel 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdb4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_bevel_4G.png" alt="Butt Double Bevel 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double Bevel 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="v" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btv1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btv2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btv3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btv4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btv1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_V_1G.png" alt="Butt V 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt V 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btv2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_V_2G.png" alt="Butt V 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt V 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btv3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_V_3G.png" alt="Butt V 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt V 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btv4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_V_4G.png" alt="Butt V 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt V 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="dv" class="container tab-pane fade">
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdv1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdv2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdv3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdv4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btdv1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_V_1G.png" alt="Butt Double V 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double V 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdv2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_V_2G.png" alt="Butt Double V 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double V 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdv3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_V_3G.png" alt="Butt Double V 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double V 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdv4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_V_4G.png" alt="Butt Double V 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double V 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="j" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btj1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btj2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btj3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btj4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btj1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_J_1G.png" alt="Butt J 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt J 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btj2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_J_2G.png" alt="Butt J 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt J 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btj3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_J_3G.png" alt="Butt J 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt J 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btj4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_J_4G.png" alt="Butt J 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt J 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="dj" class="container tab-pane fade">
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdj1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdj2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdj3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdj4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btdj1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_J_1G.png" alt="Butt Double J 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double J 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdj2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_J_2G.png" alt="Butt Double J 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double J 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdj3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_J_3G.png" alt="Butt Double J 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double J 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdj4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_J_4G.png" alt="Butt Double J 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double J 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="u" class="container tab-pane fade"><br>
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btu1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btu2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btu3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btu4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btu1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_U_1G.png" alt="Butt U 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt U 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btu2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_U_2G.png" alt="Butt U 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt U 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btu3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_U_3G.png" alt="Butt U 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt U 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btu4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_U_4G.png" alt="Butt U 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt U 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                        <div id="du" class="container tab-pane fade">
+                          <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                          <ul class="nav nav-pills nav-justified " role="tablist">
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdu1g"><span class=" h4 "> 1G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdu2g"><span class=" h4 "> 2G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdu3g"><span class=" h4 "> 3G </span></a>
+                            </li> &nbsp; &nbsp; &nbsp;
+                            <li class="nav-item rounded border border-5">
+                              <a class="nav-link" data-bs-toggle="tab" href="#btdu4g"><span class=" h4 "> 4G </span></a>
+                            </li>   
+                          </ul><br>
+
+                          <div class="tab-content border">
+                            <div id="btdu1g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_U_1G.png" alt="Butt Double U 1G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double U 1G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdu2g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_U_2G.png" alt="Butt Double U 2G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double U 2G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdu3g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_U_3G.png" alt="Butt Double U 3G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double U 3G</p>
+                              </div>
+                            </div><br>
+                            <div id="btdu4g" class="container tab-pane fade "><br>
+                              <div>
+                                <img class="img-thumbnail" src="./images/butt with weld/butt_double_U_4G.png" alt="Butt Double U 4G"> <br>
+                                <p class="h4 text-center text-primary">Butt Double U 4G</p>
+                              </div>
+                            </div><br>
+                          </div>
+                        </div><br>
+                      </div>
+                    </div><br>
+                    <div id="lap" class="container tab-pane fade">
+                      <div class="h2 text-primary p-2"> <b><i> Select Groove type:</i></b></div><br>
+                      <ul class="nav nav-pills nav-justified " role="tablist"> 
+                        
+                        <div class="col">
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#lb"><span class=" h4 "> Bevel </span></a>
+                          </li><br>
+                          </div>&nbsp;
+                            <div class="col">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lj"><span class=" h4 "> J </span></a>
+                              </li><br>
+                              </div>&nbsp;
+                              <div class="col">
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#lf"><span class=" h4 "> Fillet </span></a>
+                                </li><br>
+                                </div>&nbsp;
+                        </ul><br>
+                        <div class="tab-content border">
+                          <div id="lb" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lb1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lb2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lb3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lb4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="lb1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_bevel_1G.png" alt="Lap Bevel 1G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Bevel 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="lb2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_bevel_2G.png" alt="Lap Bevel 2G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Bevel 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="lb3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_bevel_3G.png" alt="Lap Bevel 3G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Bevel 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="lb4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_bevel_4G.png" alt="Lap Bevel 4G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Bevel 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                          </div><br>
+                          <div id="lj" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lj1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lj2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lj3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lj4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="lj1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_J_1G.png" alt="Lap J 1G"> <br>
+                                  <p class="h4 text-center text-primary">Lap J 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="lj2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_J_2G.png" alt="Lap J 2G"> <br>
+                                  <p class="h4 text-center text-primary">Lap J 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="lj3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_J_3G.png" alt="Lap J 3G"> <br>
+                                  <p class="h4 text-center text-primary">Lap J 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="lj4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_J_4G.png" alt="Lap J 4G"> <br>
+                                  <p class="h4 text-center text-primary">Lap J 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                          <div id="lf" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lf1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lf2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lf3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#lf4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="lf1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_fillet_1G.png" alt="Lap Fillet 1G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Fillet 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="lf2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_fillet_2G.png" alt="Lap Fillet 2G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Fillet 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="lf3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_fillet_3G.png" alt="Lap Fillet 3G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Fillet 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="lf4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/lap with weld/lap_fillet_4G.png" alt="Lap Fillet 4G"> <br>
+                                  <p class="h4 text-center text-primary">Lap Fillet 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                        </div><br>
+                    </div><br>                   
+                    <div id="cor" class="container tab-pane fade">
+                      <div class="h2 text-primary p-2"> <b><i> Select Groove type:</i></b></div><br>
+                      <ul class="nav nav-pills nav-justified " role="tablist"> 
+                        
+                        <div class="col">
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#cvg"><span class=" h4 "> V-groove </span></a>
+                          </li><br>
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#cjg"><span class=" h4 "> J-groove </span></a>
+                          </li><br>
+                          </div>&nbsp;
+                            <div class="col">
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#cf"><span class=" h4 "> Fillet </span></a>
+                                </li><br>
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#ccf"><span class=" h4 "> Corner Flange </span></a>
+                                </li><br>
+                              </div>&nbsp;
+                              <div class="col">
+                               <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce"><span class=" h4 "> Edge </span></a>
+                              </li><br>
+                              </div>&nbsp;
+                        </ul><br>
+
+                        <div class="tab-content border">
+                          <div id="cvg" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cvg1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cvg2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cvg3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cvg4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="cvg1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_1G.png" alt="Corner 
+                                  Joint V-groove 1G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint V-groove 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="cvg2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_2G.png" alt="Corner
+                                  Joint V-groove 2G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint V-groove 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="cvg3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_3G.png" alt="Corner
+                                  Joint V-groove 3G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint V-groove 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="cvg4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_4G.png" alt="Corner
+                                  Joint V-groove 4G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint V-groove 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                          </div><br>
+                          <div id="cjg" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cjg1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cjg2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cjg3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cjg4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="cjg1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_J_1G.png" alt="Corner 
+                                  Joint J-groove 1G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint J-groove 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="cjg2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_J_2G.png" alt="Corner
+                                  Joint J-groove 2G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint J-groove 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="cjg3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_J_3G.png" alt="Corner
+                                  Joint J-groove 3G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint J-groove 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="cjg4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_J_4G.png" alt="Corner
+                                  Joint J-groove 4G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint J-groove 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+
+                          </div><br>
+                          <div id="ce" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="ce1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_1G.png" alt="Corner Joint Edge 1G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Edge 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="ce2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_2G.png" alt="Corner Joint Edge 2G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Edge 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="ce3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_3G.png" alt="Corner Joint Edge 3G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Edge 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="ce4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_4G.png" alt="Corner Joint Edge 4G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Edge 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                          </div><br>
+                          <div id="cf" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cf1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cf2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cf3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cf4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="cf1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_fillet_1G.png" alt="Corner Joint Fillet 1G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Fillet 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="cf2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images//corner with weld/corner_fillet_2G.png" alt="Corner Joint Fillet 2G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Fillet 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="cf3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_fillet_3G.png" alt="Corner Joint Fillet 3G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Fillet 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="cf4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_fillet_4G.png" alt="Corner Joint Fillet 4G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Joint Fillet 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                          <div id="ccf" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ccf1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ccf2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ccf3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ccf4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="ccf1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_flange_1G.png" alt="Corner Flange 1G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Flange 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="ccf2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_flange_2G.png" alt="Corner Flange 2G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Flange 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="ccf3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_flange_3G.png" alt="Corner Flange 3G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Flange 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="ccf4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/corner with weld/corner_flange_4G.png" alt="Corner Flange 4G"> <br>
+                                  <p class="h4 text-center text-primary">Corner Flange 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                        </div><br>
+                    </div><br>
+                    <div id="edg" class="container tab-pane fade">
+                      <div class="h2 text-primary p-2"> <b><i> Select Groove type:</i></b></div><br>
+                      <ul class="nav nav-pills nav-justified " role="tablist">   
+                        <div class="col">
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#eug"><span class=" h4 "> U-groove </span></a>
+                          </li><br>
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#ev"><span class=" h4 "> V </span></a>
+                          </li><br>
+                          </div>&nbsp;
+                            <div class="col">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ej"><span class=" h4 "> J </span></a>
+                              </li><br>
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eb"><span class=" h4 "> Bevel </span></a>
+                              </li><br>
+                              </div>&nbsp;
+                              <div class="col">
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#es"><span class=" h4 "> Square </span></a>
+                                </li><br>
+                              </div>&nbsp;
+                        </ul><br>
+
+                        <div class="tab-content border">
+                          <div id="eug" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eug1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eug2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eug3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eug4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="eug1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_U-Groove_ 1G.png" alt="Edge U-groove 1G"> <br>
+                                  <p class="h4 text-center text-primary">Edge U-groove 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="eug2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_U-Groove_ 2G.png" alt="Edge U-groove 2G"> <br>
+                                  <p class="h4 text-center text-primary">Edge U-groove 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="eug3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_U-Groove_ 3G.png" alt="Edge U-groove 3G"> <br>
+                                  <p class="h4 text-center text-primary">Edge U-groove 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="eug4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_U-Groove_ 4G.png" alt="Edge U-groove 4G"> <br>
+                                  <p class="h4 text-center text-primary">Edge U-groove 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                          </div><br>
+                          <div id="ev" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ev1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ev2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ev3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ev4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="ev1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_V_ 1G.png" alt="Edge V 1G"> <br>
+                                  <p class="h4 text-center text-primary">Edge V 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="ev2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_V_ 2G.png" alt="Edge V 2G"> <br>
+                                  <p class="h4 text-center text-primary">Edge V 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="ev3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_V_ 3G.png" alt="Edge V 3G"> <br>
+                                  <p class="h4 text-center text-primary">Edge V 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="ev4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_V_ 4G.png" alt="Edge V 4G"> <br>
+                                  <p class="h4 text-center text-primary">Edge V 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+
+                          </div><br>
+                          <div id="ej" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ej1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ej2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ej3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ej4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="ej1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_J_1G.png" alt="Edge J 1G"> <br>
+                                  <p class="h4 text-center text-primary">Edge J 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="ej2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_J_2G.png" alt="Edge J 2G"> <br>
+                                  <p class="h4 text-center text-primary">Edge J 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="ej3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_J_3G.png" alt="Edge J 3G"> <br>
+                                  <p class="h4 text-center text-primary">Edge J 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="ej4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/Edge_J_4G.png" alt="Edge J 4G"> <br>
+                                  <p class="h4 text-center text-primary">Edge J 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                          <div id="eb" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eb1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eb2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eb3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#eb4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="eb1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_bevel_1G.png" alt="Edge Bevel 1G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Bevel 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="eb2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_bevel_2G.png" alt="Edge Bevel 2G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Bevel 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="eb3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_bevel_3G.png" alt="Edge Bevel 3G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Bevel 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="eb4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_bevel_4G.png" alt="Edge Bevel 4G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Bevel 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                          </div><br>
+                          <div id="es" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#es1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#es2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#es3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#es4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="es1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_1G.png" alt="Edge Sqaure 1G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Sqaure 1G</p>
+                                </div>
+                              </div><br>
+                             <div id="es2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_2G.png" alt="Edge Sqaure 2G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Sqaure 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="es3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_3G.png" alt="Edge Sqaure 3G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Sqaure 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="es4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/edge/edge_square_4G.png" alt="Edge Sqaure 4G"> <br>
+                                  <p class="h4 text-center text-primary">Edge Sqaure 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+
+                          </div><br>
+                        </div><br>
+                    </div><br>
+                    <div id="tee" class="container tab-pane fade">
+                      <div class="h2 text-primary p-2"> <b><i> Select Groove type:</i></b></div><br>
+                      <ul class="nav nav-pills nav-justified " role="tablist">   
+                        <div class="col">
+                          <li class="nav-item rounded border border-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tpt"><span class=" h4 "> Plain Tee </span></a>
+                          </li><br>
+                          </div>&nbsp;
+                            <div class="col">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tbt"><span class=" h4 "> Beveled Tee </span></a>
+                              </li><br>
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdbt"><span class=" h4 "> Double Beveled Tee </span></a>
+                              </li><br>
+                              </div>&nbsp;
+                              <div class="col">
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#tj"><span class=" h4 "> J </span></a>
+                                </li><br>
+                                <li class="nav-item rounded border border-5">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#tdj"><span class=" h4 "> Double J </span></a>
+                                </li><br>
+                              </div>&nbsp;
+                        </ul><br>
+
+                        <div class="tab-content border">
+                          <div id="tpt" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tpt1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tpt2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tpt3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tpt4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="tpt1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Plain_ 1G.png" alt="Plain Tee 1G"> <br>
+                                  <p class="h4 text-center text-primary">Plain Tee 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="tpt2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Plain_ 2G.png" alt="Plain Tee 2G"> <br>
+                                  <p class="h4 text-center text-primary">Plain Tee 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="tpt3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Plain_ 3G.png" alt="Plain Tee 3G"> <br>
+                                  <p class="h4 text-center text-primary">Plain Tee 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="tpt4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Plain_ 4G.png" alt="Plain Tee 4G"> <br>
+                                  <p class="h4 text-center text-primary">Plain Tee 4G</p>
+                                </div>
+                              </div><br>
+                              
+                            </div>
+                          </div><br>
+                          <div id="tbt" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tbt1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tbt2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tbt3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tbt4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="tbt1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Beveled _1G.png" alt="Beveled Tee 1G"> <br>
+                                  <p class="h4 text-center text-primary">Beveled Tee 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="tbt2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_beveled_2G.png" alt="Beveled Tee 2G"> <br>
+                                  <p class="h4 text-center text-primary">Beveled Tee 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="tbt3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_beveled_3G.png" alt="Beveled Tee 3G"> <br>
+                                  <p class="h4 text-center text-primary">Beveled Tee 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="tbt4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_Beveled_4G.png" alt="Beveled Tee 4G"> <br>
+                                  <p class="h4 text-center text-primary">Beveled Tee 4G</p>
+                                </div>
+                              </div><br>
+
+                          </div>
+
+
+                          </div><br>
+                          <div id="tdbt" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdbt1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdbt2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdbt3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdbt4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="tdbt1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleBevel_ 1G.png" alt="Double Beveled Tee 1G"> <br>
+                                  <p class="h4 text-center text-primary">Double Beveled Tee 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdbt2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleBevel_ 2G.png" alt="Double Beveled Tee 2G"> <br>
+                                  <p class="h4 text-center text-primary">Double Beveled Tee 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdbt3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleBevel_ 3G.png" alt="Double Beveled Tee 3G"> <br>
+                                  <p class="h4 text-center text-primary">Double Beveled Tee 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdbt4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleBevel_ 4G.png" alt="Double Beveled Tee 4G"> <br>
+                                  <p class="h4 text-center text-primary">Double Beveled Tee 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                              
+                          </div><br>
+                          <div id="tj" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tj1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tj2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tj3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tj4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="tj1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_J_ 1G.png" alt="Tee J 1G"> <br>
+                                  <p class="h4 text-center text-primary">Tee J 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="tj2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_J_ 2G.png" alt="Tee J 2G"> <br>
+                                  <p class="h4 text-center text-primary">Tee J 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="tj3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_J_ 3G.png" alt="Tee J 3G"> <br>
+                                  <p class="h4 text-center text-primary">Tee J 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="tj4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_J_ 4G.png" alt="Tee J 4G"> <br>
+                                  <p class="h4 text-center text-primary">Tee J 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                              
+                          </div><br>
+                          <div id="tdj" class="container tab-pane fade"><br>
+                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
+                            
+                            <ul class="nav nav-pills nav-justified " role="tablist">
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdj1g"><span class=" h4 "> 1G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdj2g"><span class=" h4 "> 2G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdj3g"><span class=" h4 "> 3G </span></a>
+                              </li> &nbsp; &nbsp; &nbsp;
+                              <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tdj4g"><span class=" h4 "> 4G </span></a>
+                              </li>   
+                            </ul><br>
+
+                            <div class="tab-content border">
+                              <div id="tdj1g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleJ_ 1G.png" alt="Tee Double J 1G"> <br>
+                                  <p class="h4 text-center text-primary">Tee Double J 1G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdj2g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleJ_ 2G.png" alt="Tee Double J 2G"> <br>
+                                  <p class="h4 text-center text-primary">Tee Double J 2G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdj3g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleJ_ 3G.png" alt="Tee Double J 3G"> <br>
+                                  <p class="h4 text-center text-primary">Tee Double J 3G</p>
+                                </div>
+                              </div><br>
+                              <div id="tdj4g" class="container tab-pane fade "><br>
+                                <div>
+                                  <img class="img-thumbnail" src="./images/tee with weld/Tee_DoubleJ_ 4G.png" alt="Tee Double J 4G"> <br>
+                                  <p class="h4 text-center text-primary">Tee Double J 4G</p>
+                                </div>
+                              </div><br>
+                            </div>
+                              
+                          </div><br>
+                        </div><br>
+                    </div><br>
+                  </div>
+                  <br>
+            </div>
+
+            </div>
+            <div id="stbc" class="tab-pane">
+              <div class="container text-primary p-5 ">
                     <div class="row p-3 text-left">
               <div class="h2 text-primary p-2 "> <b><i>Select the Orientation</i></b> </div>
                 <ul class="nav nav-pills" id="sor" role="tablist">
                   <div class="col text-center"> 
                   <li class="nav-item rounded rounded-5 border border-5">
-                    <a class="nav-link " data-bs-toggle="tab" id="g1"> 1G</a>
+                    <a class="nav-link " data-bs-toggle="tab" id="g1"> <strong class="h3"> 1G </strong></a>
                   </li></div><div class="col text-center"> 
                   <li class="nav-item rounded rounded-5 border border-5">
-                    <a class="nav-link" data-bs-toggle="tab" id="g2">2G</a>
+                    <a class="nav-link" data-bs-toggle="tab" id="g2"><strong class="h3">2G </strong></a>
                   </li></div><div class="col text-center"> 
                   <li class="nav-item rounded rounded-5 border border-5">
-                    <a class="nav-link" data-bs-toggle="tab" id="g3">3G</a>
+                    <a class="nav-link" data-bs-toggle="tab" id="g3" ><strong class="h3">3G </strong></a>
                   </li></div><div class="col text-center"> 
                   <li class="nav-item rounded rounded-5 border border-5">
-                    <a class="nav-link" data-bs-toggle="tab" id="g4">4G</a>
+                    <a class="nav-link" data-bs-toggle="tab" id="g4"><strong class="h3">4G </strong></a>
                   </li></div>
                 </ul>
               </div>
@@ -138,15 +1538,16 @@
                 <div class="col text-center"> 
                   <button type="button" class="btn btn-primary text-white rounded rounded-5 p-3 border border-5" id="wldbtn">
                       <span class="h5">Weld on</span>
-                  </button></div>
+                  </button>
+                </div>
+                  
               </div>
-                  </div>
-                </div><br>
+                  </div><br>
               </div>
           </div>
       </div>
     </div>
-
+    </div>
     <div class="container text-primary p-3" id="cnv">
                       <div class="row text-center">
                         <div class="col-md-12">
