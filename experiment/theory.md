@@ -114,6 +114,17 @@ The deposition of metal on the surface of the workpiece with the help of welding
 ***Figure 10: Schematic representation of Surface Weld***
 </center> 
 
+## Welding Techniques:
+### Forehand Welding and Backhand Welding:
+In SMAW welding, the forehand technique is a "push" method used for thin materials, where the electrode advances along the direction of the weld, resulting in increased travel speed and reduced penetration depth. The backhand technique is a "pull" method used for thick materials, wherein the electrode moves against the weld direction, resulting in deeper penetration but reduced speed. The schematic of these welding technique is shown in figure10.
+
+<center>
+<img src="./images/Tfig11.png" style="width:50%">
+
+***Figure 11: Schematic of (a) Forehand welding (b) Backhand Welding***
+</center> 
+
+
 ## Welding Positions:
 
 Depending on the application of the parts, welding needs to be performed in various positions. Not all welding processes are capable of welding in all positions and weld parameters also need to be modified to weld in different positions. For example, welding in an overhead position may be needed in structural applications. Welders are expected to practice welding in any position. Some welding jobs can be done in any position while some are limited to just one or two.
@@ -132,7 +143,7 @@ The difficulty level for the welding increases from Flat to horizontal to vertic
 <center>
 <img src="./images/Tfig11.jpg" style="width:50%">
 
-***Figure 11: Schematic of the welding positions (rows) with respect to joint types (column)***
+***Figure 12: Schematic of the welding positions (rows) with respect to joint types (column)***
 </center>
 
 ## Welding Symbol & Nomenclature:
@@ -160,7 +171,7 @@ Figure 12 illustrates the welding symbol with the different elements that helps 
 <center>
 <img src="./images/Tfig12.jpg" style="width:50%">
 
-***Figure 12: Representation of the weld symbols and the basic elements***
+***Figure 13: Representation of the weld symbols and the basic elements***
 </center> 
  
 The basic representation of the welding symbol for different grove joint is shown in figure 13.   
@@ -168,7 +179,7 @@ The basic representation of the welding symbol for different grove joint is show
 <center>
 <img src="./images/Tfig13.png" style="width:50%">
 
-***Figure 13: Schematic representation of various groove weld types and its symbols.***
+***Figure 14: Schematic representation of various groove weld types and its symbols.***
 </center> 
  
 The basic weld symbols consist of the type of weld, the contour of the weld (convex , concave and flat) , and the type of finish (grinding, michining or chipping). Figure 14 illustrates some of the elements of the basic welding processes.
@@ -176,5 +187,5 @@ The basic weld symbols consist of the type of weld, the contour of the weld (con
 <center>
 <img src="./images/Tfig14.png" style="width:50%">
 
-***Figure 14: The above figure represents the Basic weld symbols***
+***Figure 15: The above figure represents the Basic weld symbols***
 </center> 
