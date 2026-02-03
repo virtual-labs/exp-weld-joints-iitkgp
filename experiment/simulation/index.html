@@ -8,12 +8,18 @@
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/adik.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="../js/adiexp1.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three/examples/jsm/"
+    }
+  }
+</script>
     
 </head>
 <body>
@@ -49,38 +55,57 @@
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-          <p class="bg-success"> <h3 class=" my-5 text-primary text-center" onclick="$('#inst').show();" > Instructions: </h3>
-            <ol id="inst">
+          <p class="bg-success"> <h3 class=" my-5 text-primary text-center"  > Instructions: </h3>
+            <ul id="inst">
               <li> <span class="h6 text-secondary"> Before starting the process read the instructions completely</span></li>
-              <li> Press <b class="text-primary"> Start </b> button to start the simulator.</li>
+              <li>Select the button <b class="text-primary">Types of Weld Joints </b> or <b class="text-primary">Weld Position Simulation</b> </li>
+              <li>If <b class="text-primary">Types of Weld Joints </b> is selected follow the steps below</li>
+              <ul>
               <li> Select the type of <b class="text-primary"> Weld joint</b></li>
               <li> Select the <b class="text-primary"> Groove type</b> of weld as per the requirement.</li>
-              <li> Select the <b>Weld position</b> from <b class="text-primary"> (1G, 2G, 3G, 4G)</b> where you want to perform the welding operation.</li>
-              <li>Observe the image and its position as per your selcetion</li>
+              <li> Select the <b class="text-primary">Weld position</b> from <b class="text-primary"> (1G, 2G, 3G, 4G)</b> where you want to perform the welding operation.</li>
+              <li>Observe the image and its position as per your selection</li>
               <li> Click on the <b class="text-primary">Stop</b> button to stop the simulation</li>
-              <li>Repeat the experiment by selcting a different Weld joint and Groove type.</li>
-            </ol>
+              <li>Repeat the experiment by selecting a different Weld joint, Groove type, and Weld position.</li>
+              </ul>
+              <li>If <b class="text-primary">Weld Position Simulation</b> is selected follow the steps below</li>
+              <ul>
+              <li> Select the <b class="text-primary">Weld position</b> from <b class="text-primary"> (1G, 2G, 3G, 4G)</b> where you want to perform the welding operation.</li>
+              <li>Click on the <b class="text-primary">Weld on</b> button to start the simulation</li>
+              <li>Observe the welding simulation as per your selected position</li>
+              <li> Click on the <b class="text-primary">Stop</b> button to stop the simulation</li>
+              <li>Repeat the experiment by selecting a different Weld Position.</li>  
+            </ul>
+              
+            </ul>
           </p> 
           </div>
         <div class="col-md-1"></div>
       </div>
     </div>
+    
     <div class="container p-3 my-5 border">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 ">
-          <!-- Code Start here-->
-          <ul class="nav nav-pills nav-justified " role="tablist">
-            <li class="nav-item bg-success">
-              <a class="nav-link" data-bs-toggle="tab" href="#Strt" onclick="$('#inst').hide();"><span class=" h3 text-dark"> Start </span></a>
-            </li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <li class="nav-item bg-danger">
-              <a class="nav-link" data-bs-toggle="tab" href="#" onclick="window.location.reload();"><span class=" h3 text-dark"> Stop </span></a>
-            </li>
-          </ul><br>
+      <div class="row text-center">
+        <div class="col-md-4 ">
+          <button type="button" class="btn btn-primary btn-lg rounded rounded-3 p-3" id="stb" ><strong> Weld Position Simulation </strong> </button>
+        </div>
+        <div class="col-md-4 ">  
+          <button type="button" class="btn btn-primary btn-lg rounded rounded-3 p-3" id="strb" > <strong> Types of Weld Joints </strong> </button>
+        </div>
+        <div class="col-md-4 text-center"> 
+          <button type="button" class="btn btn-danger text-white rounded rounded-5 p-3 border border-5" onclick="window.location.reload();">
+                      <span class="h5">&nbsp; Stop &nbsp; </span></button>
+        </div>
         
-          <div class="tab-content border">
-            <div id="Strt" class="container tab-pane fade "><br>
+      </div>
+    </div>
+
+    <div class="container" id="adism">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tab-content">
+            <div id="strbc" class="tab-pane">
+              <div class="container"><br>
               <div class="h2 text-primary p-2"> <b><i> Select Weld joint:</i></b></div><br>
                   <ul class="nav nav-pills nav-justified " role="tablist">
                     <li class="nav-item rounded border border-5">
@@ -713,20 +738,17 @@
                           </li><br>
                           </div>&nbsp;
                             <div class="col">
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#cs"><span class=" h4 "> Spot </span></a>
-                              </li><br>
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#ce"><span class=" h4 "> Edge </span></a>
-                              </li><br>
-                              </div>&nbsp;
-                              <div class="col">
                                 <li class="nav-item rounded border border-5">
                                   <a class="nav-link" data-bs-toggle="tab" href="#cf"><span class=" h4 "> Fillet </span></a>
                                 </li><br>
                                 <li class="nav-item rounded border border-5">
                                   <a class="nav-link" data-bs-toggle="tab" href="#ccf"><span class=" h4 "> Corner Flange </span></a>
                                 </li><br>
+                              </div>&nbsp;
+                              <div class="col">
+                               <li class="nav-item rounded border border-5">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ce"><span class=" h4 "> Edge </span></a>
+                              </li><br>
                               </div>&nbsp;
                         </ul><br>
 
@@ -830,56 +852,6 @@
                               </div><br>
                             </div>
 
-
-                          </div><br>
-                          <div id="cs" class="container tab-pane fade"><br>
-                            <div class="h2 text-primary p-2"> <b><i> Select Weld Position:</i></b></div><br>
-                            
-                            <ul class="nav nav-pills nav-justified " role="tablist">
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#cs1g"><span class=" h4 "> 1G </span></a>
-                              </li> &nbsp; &nbsp; &nbsp;
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#cs2g"><span class=" h4 "> 2G </span></a>
-                              </li> &nbsp; &nbsp; &nbsp;
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#cs3g"><span class=" h4 "> 3G </span></a>
-                              </li> &nbsp; &nbsp; &nbsp;
-                              <li class="nav-item rounded border border-5">
-                                <a class="nav-link" data-bs-toggle="tab" href="#cs4g"><span class=" h4 "> 4G </span></a>
-                              </li>   
-                            </ul><br>
-
-                            <div class="tab-content border">
-                              <div id="cs1g" class="container tab-pane fade "><br>
-                                <div>
-                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_1G.png" alt="Corner 
-                                  Joint Spot 1G"> <br>
-                                  <p class="h4 text-center text-primary">Corner Joint Spot 1G</p>
-                                </div>
-                              </div><br>
-                              <div id="cs2g" class="container tab-pane fade "><br>
-                                <div>
-                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_2G.png" alt="Corner
-                                  Joint Spot 2G"> <br>
-                                  <p class="h4 text-center text-primary">Corner Joint Spot 2G</p>
-                                </div>
-                              </div><br>
-                              <div id="cs3g" class="container tab-pane fade "><br>
-                                <div>
-                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_3G.png" alt="Corner
-                                  Joint Spot 3G"> <br>
-                                  <p class="h4 text-center text-primary">Corner Joint Spot 3G</p>
-                                </div>
-                              </div><br>
-                              <div id="cs4g" class="container tab-pane fade "><br>
-                                <div>
-                                  <img class="img-thumbnail" src="./images/corner with weld/corner_V_4G.png" alt="Corner
-                                  Joint Spot 4G"> <br>
-                                  <p class="h4 text-center text-primary">Corner Joint Spot 4G</p>
-                                </div>
-                              </div><br>
-                            </div>
 
                           </div><br>
                           <div id="ce" class="container tab-pane fade"><br>
@@ -1542,23 +1514,52 @@
                   </div>
                   <br>
             </div>
+
+            </div>
+            <div id="stbc" class="tab-pane">
+              <div class="container text-primary p-5 ">
+                    <div class="row p-3 text-left">
+              <div class="h2 text-primary p-2 "> <b><i>Select the Orientation</i></b> </div>
+                <ul class="nav nav-pills" id="sor" role="tablist">
+                  <div class="col text-center"> 
+                  <li class="nav-item rounded rounded-5 border border-5">
+                    <a class="nav-link " data-bs-toggle="tab" id="g1"> <strong class="h3"> 1G </strong></a>
+                  </li></div><div class="col text-center"> 
+                  <li class="nav-item rounded rounded-5 border border-5">
+                    <a class="nav-link" data-bs-toggle="tab" id="g2"><strong class="h3">2G </strong></a>
+                  </li></div><div class="col text-center"> 
+                  <li class="nav-item rounded rounded-5 border border-5">
+                    <a class="nav-link" data-bs-toggle="tab" id="g3" ><strong class="h3">3G </strong></a>
+                  </li></div><div class="col text-center"> 
+                  <li class="nav-item rounded rounded-5 border border-5">
+                    <a class="nav-link" data-bs-toggle="tab" id="g4"><strong class="h3">4G </strong></a>
+                  </li></div>
+                </ul>
+              </div>
+              <div class="row p-3" id="wldb">
+                <div class="col text-center"> 
+                  <button type="button" class="btn btn-primary text-white rounded rounded-5 p-3 border border-5" id="wldbtn">
+                      <span class="h5">Weld on</span>
+                  </button>
+                </div>
+                  
+              </div>
+                  </div><br>
+              </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-          <!-- Code End here-->
-        </div>
-        <div class="col-md-1"></div>  
       </div>
     </div>
+    </div>
+    <div class="container text-primary p-3" id="cnv">
+                      <div class="row text-center">
+                        <div class="col-md-12">
+                          <div id="adicnv">ADITYA</div>
+                        </div>
+                      </div>
+    </div>
+        
+    <script type="text/javascript" src="./js/adiwep1.js"> </script>
+
 
     <div class="container p-3 my-5 text-primary text-center border">
       <div class="row">
@@ -1573,5 +1574,6 @@
         </footer>
       </div>
   </div>
+
 </body>
 </html>
