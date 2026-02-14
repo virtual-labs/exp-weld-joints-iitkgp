@@ -4,7 +4,7 @@
 <b>Discipline | <b> Mechanical Engineerig
 :--|:--|
 <b> Lab | <b> Welding Lab
-<b> Experiment|     <b> Study and design of Weld joints and Experiment 1
+<b> Experiment|     <b> Types of Weld Joints and Weld Positions and Experiment 1
 
 ### About the Experiment 
 
